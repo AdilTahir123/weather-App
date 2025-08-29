@@ -16,6 +16,10 @@ const apiKey = '20bb56c260bfa09844286d082839a34b';
 button.addEventListener('click', (e) => {
   e.preventDefault();
   const city = input.value.trim();
+  if(!city) {
+    weatherInfo.innerHTML = `<p>Please enter a city name.</p>`;
+    return;
+  }
   if (city) {
     getWeatherByCity(city);
   }
